@@ -30,10 +30,6 @@ PanelWindow {
         onTriggered: windowWidth = 10
     }
     
-    // Behavior on width { NumberAnimation { duration: 400; easing.type: Easing.InOutQuad } } // REMOVED: Instant
-    
-    // clip: true // REMOVED: Window objects do not support 'clip'. Content outside width is naturally not rendered.
-    
     color: "transparent"
 
     // Wayland Properties
@@ -127,7 +123,7 @@ PanelWindow {
             
             // 2. Opacity Animation
             opacity: isCollapsed ? 0 : 1
-            // Behavior on opacity { NumberAnimation { duration: 300; easing.type: Easing.InOutQuad } } // REMOVED: Instant
+            Behavior on opacity { NumberAnimation { duration: 300; easing.type: Easing.OutQuad } } // REMOVED: Instant
             
             radius: 16
             color: Colors.backgroundDark
