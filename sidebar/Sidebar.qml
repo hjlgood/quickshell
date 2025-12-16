@@ -42,7 +42,7 @@ PanelWindow {
     // Logic
     property var currentViewDate: new Date()
     property bool isMuted: false
-    property bool isCollapsed: false
+    property bool isCollapsed: true
 
     onIsCollapsedChanged: {
         if (!isCollapsed) {
@@ -66,7 +66,7 @@ PanelWindow {
     }
 
     Timer {
-        id: collapseTimer
+        id: collapseVolChangeTimer
         interval: 3000
         repeat: false
         onTriggered: isCollapsed = true
@@ -483,6 +483,16 @@ PanelWindow {
                     workspaceProc.running = true
                 }
 
+                Process {
+                    id: workspaceSwitchProc
+                    command: []
+                    onRunningChanged: {
+                        if (!running && exitCode !== 0) {
+                            console.error("Failed to switch workspace")
+                        }
+                    }
+                }
+
                 
                 RowLayout {
                     Layout.fillWidth: true
@@ -505,6 +515,15 @@ PanelWindow {
                            
                            Behavior on color { ColorAnimation { duration: 200 } }
                            Behavior on opacity { NumberAnimation { duration: 200 } }
+
+                           MouseArea {
+                               anchors.fill: parent
+                               cursorShape: Qt.PointingHandCursor
+                               onClicked: {
+                                   workspaceSwitchProc.command = ["hyprctl", "dispatch", "workspace", wsId]
+                                   workspaceSwitchProc.running = true
+                               }
+                           }
                        }
                     }
                 }
@@ -602,7 +621,7 @@ PanelWindow {
                                         if (!volSlider.pressed) {
                                             if (Math.abs(vol - volSlider.value) > 1 && rootWindow.isCollapsed == true) {
                                                 rootWindow.isCollapsed = false
-                                                collapseTimer.restart()
+                                                collapseVolChangeTimer.restart()
                                             }
                                             volSlider.value = vol
                                             volRow.lastVolume = vol
