@@ -267,28 +267,29 @@ PanelWindow {
                         anchors.fill: parent
                         spacing: 4
                         
-                        // Weekday Headers
-                        RowLayout {
-                            Layout.fillWidth: true
-                            spacing: 4
-                            Repeater { 
-                                model: ["Su","Mo","Tu","We","Th","Fr","Sa"]
-                                Text { 
-                                    text: modelData
-                                    color: Colors.backgroundLight
-                                    font.family: "RedHatDisplay"
-                                    Layout.fillWidth: true 
-                                    horizontalAlignment: Text.AlignHCenter 
-                                } 
-                            }
-                        }
+
 
                         // Days Grid
                         GridLayout {
                            columns: 7; rowSpacing: 4; columnSpacing: 4; Layout.fillWidth: true
                            
+                           // Weekday Headers
+                           Repeater { 
+                               model: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+                               Text { 
+                                   text: modelData
+                                   color: Colors.backgroundLight
+                                   font.family: "RedHatDisplay"
+                                   Layout.fillWidth: true 
+                                   horizontalAlignment: Text.AlignHCenter 
+                               } 
+                           }
+                           
                            // Spacer for first day offset
-                           Repeater { model: startDayOfMonth(currentViewDate.getMonth(), currentViewDate.getFullYear()); Item { width: 1; height: 1 } }
+                           Repeater { 
+                               model: startDayOfMonth(currentViewDate.getMonth(), currentViewDate.getFullYear())
+                               Item { width: 1; height: 1; Layout.fillWidth: true } 
+                           }
                            
                            // Actual Days
                            Repeater {
