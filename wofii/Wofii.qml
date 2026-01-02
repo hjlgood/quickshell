@@ -78,7 +78,7 @@ PanelWindow {
         height: 600
         anchors.centerIn: parent
         radius: 12
-        color: Colors.backgroundDark
+        color: Colors.backgroundDarkWindow
         border.color: Colors.backgroundLight
         border.width: 1
 
