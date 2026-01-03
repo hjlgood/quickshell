@@ -28,7 +28,7 @@ Item {
             font.family: "RedHatDisplay"
             font.pixelSize: 13
             font.weight: Font.Bold
-            text: Qt.formatTime(new Date(), "HH:mm")
+            text: Qt.formatDateTime(new Date(), "dddd, MMMM d, HH:mm")
         }
     }
 
@@ -47,7 +47,7 @@ Item {
         running: true
         repeat: true
         onTriggered: {
-            clockText.text = Qt.formatTime(new Date(), "hh:mm");
+            clockText.text = Qt.formatDateTime(new Date(), "dddd, MMMM d, HH:mm");
         }
     }
 }
