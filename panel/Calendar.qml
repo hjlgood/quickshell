@@ -12,6 +12,11 @@ PanelWindow {
 
     // Calendar Logic
     property var currentViewDate: new Date()
+    property var today: new Date()
+
+    function updateToday() {
+        today = new Date();
+    }
 
     function daysInMonth(month, year) {
         return new Date(year, month + 1, 0).getDate();
@@ -158,7 +163,7 @@ PanelWindow {
                         Layout.fillWidth: true
                         Layout.preferredHeight: 35
 
-                        property bool isToday: (index + 1) === new Date().getDate() && calendarWindow.currentViewDate.getMonth() === new Date().getMonth() && calendarWindow.currentViewDate.getFullYear() === new Date().getFullYear()
+                        property bool isToday: (index + 1) === calendarWindow.today.getDate() && calendarWindow.currentViewDate.getMonth() === calendarWindow.today.getMonth() && calendarWindow.currentViewDate.getFullYear() === calendarWindow.today.getFullYear()
 
                         Rectangle {
                             anchors.centerIn: parent

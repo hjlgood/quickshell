@@ -38,6 +38,7 @@ QtObject {
                 id: clock
                 anchors.centerIn: parent
                 onClicked: {
+                    calendarPopup.updateToday();
                     panelRoot.calendarVisible = !panelRoot.calendarVisible;
                 }
             }
