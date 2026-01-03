@@ -25,8 +25,8 @@ Rectangle {
         Image {
             anchors.centerIn: parent
             source: volumeRoot.iconPath
-            width: 16
-            height: 16
+            width: 15
+            height: 15
             sourceSize: Qt.size(16, 16)
         }
     }

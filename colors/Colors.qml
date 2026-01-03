@@ -18,7 +18,7 @@ QtObject {
     // readonly property color green: "#A3BE8C"
 
     // Glassmorphism
-    readonly property color backgroundDark: Qt.rgba(0., 0., 0., 0.6)
+    readonly property color backgroundDark: Qt.rgba(0., 0., 0., 0.4)
     readonly property color backgroundDarkWindow: Qt.rgba(0., 0., 0., 0.95)
     readonly property color backgroundLight: Qt.rgba(1, 1, 1, 0.2)
     // readonly property color text: "#b4b8c1"

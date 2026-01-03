@@ -20,7 +20,7 @@ QtObject {
         }
 
         // Panel properties
-        implicitHeight: 25
+        implicitHeight: 20
         screen: Quickshell.screens[1]
         color: "transparent"
 

@@ -27,8 +27,8 @@ Rectangle {
         Image {
             anchors.centerIn: parent
             source: powerRoot.iconPath
-            width: 16
-            height: 16
+            width: 13
+            height: 13
             sourceSize: Qt.size(16, 16)
 
             // Apply text color to icon if needed, or just keep it as is.

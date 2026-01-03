@@ -26,9 +26,9 @@ Item {
             anchors.centerIn: parent
             color: Colors.text
             font.family: "RedHatDisplay"
-            font.pixelSize: 14
+            font.pixelSize: 13
             font.weight: Font.Bold
-            text: Qt.formatTime(new Date(), "hh:mm")
+            text: Qt.formatTime(new Date(), "HH:mm")
         }
     }
 

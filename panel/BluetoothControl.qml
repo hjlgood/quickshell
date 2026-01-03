@@ -25,8 +25,8 @@ Rectangle {
         Image {
             anchors.centerIn: parent
             source: bluetoothRoot.iconPath
-            width: 16
-            height: 16
+            width: 13
+            height: 13
             sourceSize: Qt.size(16, 16)
         }
     }
