@@ -145,6 +145,7 @@ PanelWindow {
                         font.family: "RedHatDisplay"
                         font.bold: true
                         Layout.fillWidth: true
+                        Layout.preferredWidth: 0
                         horizontalAlignment: Text.AlignHCenter
                     }
                 }
@@ -153,6 +154,7 @@ PanelWindow {
                     model: calendarWindow.startDayOfMonth(calendarWindow.currentViewDate.getMonth(), calendarWindow.currentViewDate.getFullYear())
                     Item {
                         Layout.fillWidth: true
+                        Layout.preferredWidth: 0
                         Layout.preferredHeight: 30
                     }
                 }
@@ -161,6 +163,7 @@ PanelWindow {
                     model: calendarWindow.daysInMonth(calendarWindow.currentViewDate.getMonth(), calendarWindow.currentViewDate.getFullYear())
                     Item {
                         Layout.fillWidth: true
+                        Layout.preferredWidth: 0
                         Layout.preferredHeight: 35
 
                         property bool isToday: (index + 1) === calendarWindow.today.getDate() && calendarWindow.currentViewDate.getMonth() === calendarWindow.today.getMonth() && calendarWindow.currentViewDate.getFullYear() === calendarWindow.today.getFullYear()
